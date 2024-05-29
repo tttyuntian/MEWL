@@ -179,7 +179,7 @@ class MewlCaptioner():
 
         return contexts, (query_description, choices, answer)
 
-    def bootstarp(self, episode_path):
+    def bootstrap(self, episode_path):
         return self._spatial_naming(episode_path)
 
     def relation(self, episode_path):
