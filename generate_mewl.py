@@ -5,6 +5,10 @@ import itertools
 import os
 from pprint import pprint
 import argparse
+
+import sys
+sys.path.append("/gpfs/data/epavlick/tyun/llm_causal_reasoning/MEWL")
+
 import utils
 import shutil
 

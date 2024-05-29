@@ -282,6 +282,7 @@ def add_objects(scene_struct, objects_candidate, args, camera):
 
         # Record data about the object in the scene data structure
         pixel_coords = utils.get_camera_coords(camera, obj.location)
+        bbox = utils.camera_view_bounds_2d(bpy.context.scene, camera, obj)
 
         objects.append({
             'name': obj_name,
@@ -291,6 +292,7 @@ def add_objects(scene_struct, objects_candidate, args, camera):
             '3d_coords': tuple(obj.location),
             'rotation': theta,
             'pixel_coords': pixel_coords,
+            'bbox': bbox.to_tuple(),
             'color': color_name,
         })
 
@@ -443,6 +445,7 @@ def add_objects_w_arrow(scene_struct, objects_candidate, arrow_idx, args, camera
 
         # Record data about the object in the scene data structure
         pixel_coords = utils.get_camera_coords(camera, obj.location)
+        bbox = utils.camera_view_bounds_2d(bpy.context.scene, camera, obj)
 
         objects.append({
             'name': obj_name,
@@ -452,6 +455,7 @@ def add_objects_w_arrow(scene_struct, objects_candidate, arrow_idx, args, camera
             '3d_coords': tuple(obj.location),
             'rotation': theta,
             'pixel_coords': pixel_coords,
+            'bbox': bbox.to_tuple(),
             'color': color_name,
         })
 
